@@ -7,13 +7,21 @@ import Html exposing (..)
 
 
 type alias Model =
-    { value : Int
+    { fileName : Maybe String
+    , softWrap : Bool
+    , tabLength : Int
+    , encoding : String
+    , lineCount : Int
     }
 
 
 init : ( Model, Cmd Msg )
 init =
-    ( { value = 1
+    ( { fileName = Nothing
+      , softWrap = False
+      , tabLength = 4
+      , encoding = "UTF-8"
+      , lineCount = 0
       }
     , Cmd.none
     )
@@ -39,8 +47,32 @@ update msg model =
 
 
 view : Model -> Html Msg
-view model =
-    p [] [ text <| toString model.value ]
+view { fileName, softWrap, tabLength, encoding, lineCount } =
+    let
+        fileNameText =
+            fileName |> Maybe.withDefault "Untitled"
+
+        softWrapText =
+            if softWrap then
+                "yes"
+            else
+                "no"
+    in
+        div []
+            [ h2 [] [ text fileNameText ]
+            , ul []
+                [ itemView "Soft Wrap" softWrapText
+                , itemView "Tab Length" (toString tabLength)
+                , itemView "Encoding" encoding
+                , itemView "Line Count" (toString lineCount)
+                ]
+            ]
+
+
+itemView : String -> String -> Html msg
+itemView label value =
+    li []
+        [ b [] [ text <| label ++ ": " ++ value ] ]
 
 
 
