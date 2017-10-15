@@ -1,4 +1,4 @@
-module Main exposing (..)
+port module Main exposing (..)
 
 import Html exposing (..)
 
@@ -32,13 +32,13 @@ init =
 
 
 type Msg
-    = NoOp
+    = TextEditorPaneChanged Model
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
+update msg _ =
     case msg of
-        NoOp ->
+        TextEditorPaneChanged model ->
             ( model, Cmd.none )
 
 
@@ -80,8 +80,15 @@ itemView label value =
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model =
-    Sub.none
+subscriptions _ =
+    textEditorPaneChanged TextEditorPaneChanged
+
+
+
+-- INCOMING PORTS
+
+
+port textEditorPaneChanged : (Model -> msg) -> Sub msg
 
 
 
