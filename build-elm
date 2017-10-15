@@ -1,0 +1,1 @@
+cd elm && elm make src/Main.elm --output=built/elm.js
