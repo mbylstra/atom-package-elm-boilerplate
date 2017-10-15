@@ -1,0 +1,1 @@
+chokidar './elm/src/**/*.elm' -c ./build-elm --initial
