@@ -1,6 +1,7 @@
 port module Main exposing (..)
 
 import Html exposing (..)
+import Html.Attributes exposing (class)
 
 
 -- MODEL
@@ -58,7 +59,7 @@ view { fileName, softWrap, tabLength, encoding, lineCount } =
             else
                 "no"
     in
-        div []
+        div [ class "elm-boilerplate" ]
             [ h2 [] [ text fileNameText ]
             , ul []
                 [ itemView "Soft Wrap" softWrapText
