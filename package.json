@@ -1,14 +1,14 @@
 {
-  "name": "active-editor-info",
-  "main": "./lib/active-editor-info",
+  "name": "elm-boilerplate",
+  "main": "./lib/elm-boilerplate",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "This is a starter, if you want to try using Elm to create an Atom package.",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "active-editor-info:toggle"
+    "atom-workspace": "elm-boilerplate:toggle"
   },
-  "repository": "https://github.com/atom/active-editor-info",
+  "repository": "https://github.com/mbylstra/atom-package-elm-boilerplate",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
@@ -16,6 +16,6 @@
   "dependencies": {
   },
   "deserializers": {
-    "active-editor-info/ActiveEditorInfoView": "deserializeActiveEditorInfoView"
+    "elm-boilerplate/ElmBoilerplateView": "deserializeElmBoilerplateView"
   }
 }

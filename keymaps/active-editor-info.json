@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "active-editor-info:toggle"
+    "ctrl-alt-o": "elm-boilerplate:toggle"
   }
 }

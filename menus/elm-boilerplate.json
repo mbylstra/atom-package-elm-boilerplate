@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle active-editor-info",
-        "command": "active-editor-info:toggle"
+        "label": "Toggle elm-boilerplate",
+        "command": "elm-boilerplate:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "active-editor-info",
+          "label": "elm-boilerplate",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "active-editor-info:toggle"
+              "command": "elm-boilerplate:toggle"
             }
           ]
         }
